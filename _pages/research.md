@@ -6,18 +6,29 @@ excerpt: "Research"
 author_profile: true
 ---
 
+<h3> Quantum-classical hybrid quantum algorithms </h3>
+
+Quantum computing is heralded as a groundbreaking approach for simulating physical and chemical systems. Among the techniques available, the Variational Quantum Eigensolver (VQE) algorithm is particularly prominent in the current noisy intermediate-scale quantum (NISQ) era, marked by a limited number of qubits and relatively high error rates. The stabilizer formalism stands out as a powerful mechanism for enhancing the efficacy of the VQE algorithm. This formalism can be utilized through both the Schrödinger and Heisenberg pictures to improve quantum simulations.
+
+In the Schrödinger picture, one approach is to prepare stabilizer states as the initial configurations for quantum circuits. Meanwhile, in the Heisenberg picture, the Hamiltonian can be classically transformed using Clifford operations, a process that retains the eigenvalues of the Hamiltonian unchanged. Our research has led to the development of algorithms that optimize VQE performance for different system types using these pictures. For chemical systems, where mean-field theory provides a qualitative foundation, we employ Clifford-based Hamiltonian transformations. This method initializes VQE with Hartree-Fock states, thereby maximizing the initial energy gradients. In the realm of strongly-correlated systems, our efforts are geared towards creating scalable algorithms to identify exact stabilizer ground states, which can then be used as the starting point for VQE.
+
+
+Beyond its role in boosting the performance of the Variational Quantum Eigensolver (VQE), the stabilizer formalism offers a foundational approach for the development of sophisticated quantum state ansätze capable of describing complex quantum systems. Drawing an analogy to the Hartree-Fock state—which serves as a pivotal basis for formulating theories like Møller-Plesset perturbation and coupled cluster theories—stabilizer ground states similarly provide a robust starting point. Just as Hartree-Fock states lay the groundwork for these advanced computational techniques in quantum chemistry, stabilizer ground states can be utilized in a parallel fashion. This opens up new avenues for constructing highly accurate and theoretically rich models, thereby extending our ability to describe and understand the intricate behaviors of quantum systems with greater precision.
+
+
+References:
+
+[1] **Sun, J.**, Cheng, L. & Li, W. (2024). Towards chemical accuracy with shallow quantum circuits: A Clifford-based Hamiltonian engineering approach. Journal of Chemical Theory and Computation. [[link](https://pubs.acs.org/doi/10.1021/acs.jctc.3c00886)]
+
+[2] **Sun, J.**, Cheng, L. & Zhang, S.-X. (2024). Stabilizer ground states: theory, algorithms and applications. arXiv preprint arXiv:2403.08441. [[link](https://arxiv.org/abs/2403.08441)]
+
 <h3> Molecular orbital based machine learning (MOB-ML) </h3>
 
-The basic elements of chemistry are atoms and electrons, whose behavior is governed by quantum mechanics.
-Based on the principles of the quantum mechanics, quantum chemistry methods offers a way to calculate the properties of molecules.
-However, for large or medium sized molecules, it is not easy to reach the desired accuracy within an acceptable computational cost.
-Thus, we developed _Molecular-Orbital-Based Machine Learning_ (MOB-ML) to obtain the molecular properties in the level of highly accurate but expensive wavefunction theory from the cheap Hartree-Fock method.
+Chemistry fundamentally revolves around the interactions of atoms and electrons, a complex dance orchestrated by the rules of quantum mechanics. Quantum chemistry, drawing from these principles, provides tools for calculating molecular properties, yet achieving desired accuracy for medium to large molecules remains a computational challenge. To bridge this gap, we introduced Molecular-Orbital-Based Machine Learning (MOB-ML), a novel approach that extracts highly accurate molecular property predictions akin to those obtained from sophisticated wavefunction theory, but at the significantly lower computational cost associated with the Hartree-Fock method.
 
-MOB-ML is carefully designed to satisfy all the physical requirements of a good quantum chemistry theory, including translation and rotational invariance, permutation symmetries of atoms and orbitals, and size consistency. 
-By ensuring the equivairance relations, it is also generalized to learn tensorial and response properties with the same accuracy as the scalar properties.
-These properties make MOB-ML a general and accurate method to be applied to organic molecules, intermolecular interactions, transition states, and open-shell systems.
-We also developed novel machine learning algorithms includes alternative black-box matrix multiplication (AltBBMM) and kernel addition Gaussian process regression (KA-GPR), which greatly enhances the machine learning efficiency without loss of accuracy.
-Due to these developments, MOB-ML has already shown great performance compared with other novel quantum machine learning methods in the world, and has already been used to generate highly accurate potential energy surface (PES) in real applications.
+MOB-ML is meticulously engineered to adhere to the core physical principles underlying reliable quantum chemistry theories. These include translational and rotational invariance, the permutation symmetries of atoms and orbitals, and size consistency. The model also respects equivariance relations, enabling it to generalize across tensorial and response properties with the same level of precision observed for scalar properties. This robust framework allows MOB-ML to accurately address a wide range of chemical phenomena, including organic molecules, intermolecular forces, transition states, and open-shell systems.
+
+Further enhancing its utility, MOB-ML incorporates cutting-edge machine learning algorithms, such as alternative black-box matrix multiplication (AltBBMM) and kernel addition Gaussian process regression (KA-GPR). These innovations significantly improve the efficiency of machine learning applications without compromising accuracy. With these advancements, MOB-ML has demonstrated superior performance in comparison to other contemporary quantum machine learning methodologies globally, and it has been successfully applied in creating highly accurate potential energy surfaces (PES) for practical use.
 
 References:
 
@@ -35,11 +46,9 @@ References:
 
 <h3> Ring-polymer molecular dynamics (RPMD) </h3>
 
-Classical molecular dynamics methods have already shown to be successful for modeling large chemical and biological systems.
-However, for light atoms like hydrogen and its isotopes, nuclear quantum effect is non-negligible and cannot be captured by these classical methods.
-Ring-polymer molcular dynamics (RPMD) is a semi-classical quantum dynamics method to approximately describe the nuclear quantum effect.
+Classical molecular dynamics methods excel in simulating large chemical and biological systems but struggle to capture the nuclear quantum effects crucial for light atoms like hydrogen. To tackle this, we turned to Ring-Polymer Molecular Dynamics (RPMD), a technique that approximates these quantum effects in a semi-classical way.
 
-In a recent work, we introduced a generalized class of thermalized RPMD integrators and studied their equilibrium accuracy, convergence rate, stability and dimensionality-freedom from a theoreical aspect of view. We confirmed that the "BCOCB" type integrator over all other known integrators in this class. We also apply this integrator to calculate bimolecular rate cofficients in the OH+CH<sub>4</sub> reaction and achieve excellent agreement with experimental data.
+In our latest study, we unveiled a new class of RPMD integrators, focusing on their accuracy, speed of convergence, stability, and their ability to work regardless of the system's size. Notably, the "BCOCB" type integrator emerged as the top performer. We used this integrator to accurately calculate reaction rates for the OH+CH4 reaction, achieving results that closely match experimental data. This work highlights the potential of RPMD, especially with our integrators, in making quantum simulations more accurate and broadly applicable.
 
 References:
 
@@ -49,13 +58,9 @@ References:
 
 <h3> Electron transport in semiconductors </h3>
 
-High-electric-field electron transport is of fundamental interest and practical importance in semiconductors.
-In fact, the theoretical description of electron transport requires accurate calculation of electron-phonon interaction.
-However, due to the high computational cost, the multi-phonon processes are usually neglected in the elctron-phonon interaction calculation.
+The study of electron transport under high electric fields is both fundamentally intriguing and practically crucial for semiconductor technology. A comprehensive theoretical understanding of electron transport necessitates precise calculations of electron-phonon interactions. Yet, the complexity and high computational demands often lead to the simplification of these calculations by omitting multi-phonon processes, which are critical for accuracy.
 
-In the recent works, we studied high-field transport properties in GaAs by including two-phonon scattering processes.
-Our findings reconcile a long-standing discrepancy regarding the strength of intervalley scattering in GaAs as inferred from transport and optical studies.
-
+In our recent research, we delved into the high-field transport characteristics of Gallium Arsenide (GaAs), specifically incorporating the effects of two-phonon scattering processes. This inclusion sheds light on and resolves a longstanding debate concerning the intensity of intervalley scattering in GaAs, a discrepancy previously noted between transport and optical studies. Our findings not only enhance the accuracy of electron transport models but also provide a more coherent understanding of electron-phonon interactions in semiconductors.
 
 References:
 
@@ -63,13 +68,3 @@ References:
 
 [2] **Sun, J.**, Minnich, A. J. (2023). Transport and noise of hot electrons in GaAs using a semi-analytical model of two-phonon polar optical phonon scattering.. _arXiv_ 2302.01480.
 
-<h3> Quantum simulation </h3>
-
-Classical quantum simulations is a useful tool to facilitate the design, simulation and analysis of quantum algorithms in the Noisy Intermediate-Scale Quantum (NISQ) era.
-Recently we developed _TensorCircuit_ as the next generation of quantum circuit simulators with support for automatic differentiation, just-in-time compiling, hardware acceleration, and vectorized parallelism.
-_TensorCircuit_ is built on top of modern machine learning frameworks and is machine learning backend agnostic. It is specifically suitable for highly efficient simulations of quantum-classical hybrid paradigm and variational quantum algorithms.
-
-
-References:
-
-[1] Zhang, S.X., Allcock, J., Wan, Z.Q., Liu, S., **Sun, J.**, Yu, H., Yang, X.H., Qiu, J., Ye, Z., Chen, Y.Q. and Lee, C.K. (2022). TensorCircuit: a Quantum Software Framework for the NISQ Era. _Quantum_, 7, 912.
